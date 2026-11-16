@@ -5,3 +5,4 @@ build*/
 *.gcno
 *.info
 coverage-html/
+Testing/
