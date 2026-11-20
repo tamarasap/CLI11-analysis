@@ -41,8 +41,19 @@ cmake --build "$BUILD_DIR" -j"$(nproc)"
 # 2. Pokretanje testova (tokom izvrsavanja nastaju .gcda fajlovi)
 echo "== 2/4 Pokretanje testova"
 ctest --test-dir "$BUILD_DIR" --output-on-failure
+
 # 3. Prikupljanje pokrivenosti i izdvajanje samo koda biblioteke
 #    (bez samih testova i sistemskih zaglavlja)
+
+# 2b. Moji testovi iz unit_tests/tests/ (za svaku oznaku osim "pocetna")
+if [ "$OZNAKA" != "pocetna" ]; then
+    echo "== 2b Prevodjenje i pokretanje mojih testova"
+    cmake -S "$SKRIPTA_DIR" -B "$BUILD_DIR/moji" \
+        -DCMAKE_BUILD_TYPE=Debug \
+        -DCMAKE_CXX_FLAGS="--coverage -O0"
+    cmake --build "$BUILD_DIR/moji" -j"$(nproc)"
+    ctest --test-dir "$BUILD_DIR/moji" --output-on-failure
+fi
 echo "== 3/4 Prikupljanje pokrivenosti"
 lcov --capture --directory "$BUILD_DIR" \
     --output-file "$BUILD_DIR/coverage.info" \
