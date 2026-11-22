@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">660</td>
@@ -958,8 +958,8 @@
 <a name="883"><span class="lineNum">     883 </span>                :            :           enable_if_t&lt;classify_object&lt;T&gt;::value &gt;= object_category::string_assignable &amp;&amp;</a>
 <a name="884"><span class="lineNum">     884 </span>                :            :                           classify_object&lt;T&gt;::value &lt;= object_category::other,</a>
 <a name="885"><span class="lineNum">     885 </span>                :            :                       detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="886"><span class="lineNum">     886 </span>                :<span class="lineCov">        503 : constexpr const char *type_name() {</span></a>
-<a name="887"><span class="lineNum">     887 </span>                :<span class="lineCov">        503 :     return &quot;TEXT&quot;;</span></a>
+<a name="886"><span class="lineNum">     886 </span>                :<span class="lineCov">        506 : constexpr const char *type_name() {</span></a>
+<a name="887"><span class="lineNum">     887 </span>                :<span class="lineCov">        506 :     return &quot;TEXT&quot;;</span></a>
 <a name="888"><span class="lineNum">     888 </span>                :            : }</a>
 <a name="889"><span class="lineNum">     889 </span>                :            : /// typename for tuple value</a>
 <a name="890"><span class="lineNum">     890 </span>                :            : template &lt;typename T,</a>
@@ -1208,16 +1208,16 @@
 <a name="1125"><span class="lineNum">    1125 </span>                :            : /// Floats</a>
 <a name="1126"><span class="lineNum">    1126 </span>                :            : template &lt;typename T,</a>
 <a name="1127"><span class="lineNum">    1127 </span>                :            :           enable_if_t&lt;classify_object&lt;T&gt;::value == object_category::floating_point, detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="1128"><span class="lineNum">    1128 </span>                :<span class="lineCov">        499 : bool lexical_cast(const std::string &amp;input, T &amp;output) {</span></a>
-<a name="1129"><span class="lineNum">    1129 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 497 times"> + </span>]:<span class="lineCov">        499 :     if(input.empty()) {</span></a>
+<a name="1128"><span class="lineNum">    1128 </span>                :<span class="lineCov">        501 : bool lexical_cast(const std::string &amp;input, T &amp;output) {</span></a>
+<a name="1129"><span class="lineNum">    1129 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 499 times"> + </span>]:<span class="lineCov">        501 :     if(input.empty()) {</span></a>
 <a name="1130"><span class="lineNum">    1130 </span>                :<span class="lineCov">          2 :         return false;</span></a>
 <a name="1131"><span class="lineNum">    1131 </span>                :            :     }</a>
-<a name="1132"><span class="lineNum">    1132 </span>                :<span class="lineCov">        497 :     char *val = nullptr;</span></a>
-<a name="1133"><span class="lineNum">    1133 </span>                :<span class="lineCov">        497 :     auto output_ld = std::strtold(input.c_str(), &amp;val);</span></a>
+<a name="1132"><span class="lineNum">    1132 </span>                :<span class="lineCov">        499 :     char *val = nullptr;</span></a>
+<a name="1133"><span class="lineNum">    1133 </span>                :<span class="lineCov">        499 :     auto output_ld = std::strtold(input.c_str(), &amp;val);</span></a>
 <a name="1134"><span class="lineNum">    1134 </span>                :            :     // strtold performs no conversion (and leaves val == start) for inputs like whitespace-only strings;</a>
 <a name="1135"><span class="lineNum">    1135 </span>                :            :     // treat that as a failure rather than reporting a successful conversion to 0</a>
-<a name="1136"><span class="lineNum">    1136 </span>        [<span class="branchCov" title="Branch 0 was taken 81 times"> + </span><span class="branchCov" title="Branch 1 was taken 416 times"> + </span>]:<span class="lineCov">        497 :     if(val == input.c_str()) {</span></a>
-<a name="1137"><span class="lineNum">    1137 </span>                :<span class="lineCov">         81 :         return false;</span></a>
+<a name="1136"><span class="lineNum">    1136 </span>        [<span class="branchCov" title="Branch 0 was taken 83 times"> + </span><span class="branchCov" title="Branch 1 was taken 416 times"> + </span>]:<span class="lineCov">        499 :     if(val == input.c_str()) {</span></a>
+<a name="1137"><span class="lineNum">    1137 </span>                :<span class="lineCov">         83 :         return false;</span></a>
 <a name="1138"><span class="lineNum">    1138 </span>                :            :     }</a>
 <a name="1139"><span class="lineNum">    1139 </span>                :<span class="lineCov">        416 :     output = static_cast&lt;T&gt;(output_ld);</span></a>
 <a name="1140"><span class="lineNum">    1140 </span>        [<span class="branchCov" title="Branch 0 was taken 401 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">        416 :     if(val == (input.c_str() + input.size())) {</span></a>
@@ -1282,9 +1282,9 @@
 <a name="1196"><span class="lineNum">    1196 </span>                :            : /// String and similar direct assignment</a>
 <a name="1197"><span class="lineNum">    1197 </span>                :            : template &lt;typename T,</a>
 <a name="1198"><span class="lineNum">    1198 </span>                :            :           enable_if_t&lt;classify_object&lt;T&gt;::value == object_category::string_assignable, detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="1199"><span class="lineNum">    1199 </span>                :<span class="lineCov">        906 : bool lexical_cast(const std::string &amp;input, T &amp;output) {</span></a>
-<a name="1200"><span class="lineNum">    1200 </span>                :<span class="lineCov">        906 :     output = input;</span></a>
-<a name="1201"><span class="lineNum">    1201 </span>                :<span class="lineCov">        906 :     return true;</span></a>
+<a name="1199"><span class="lineNum">    1199 </span>                :<span class="lineCov">        907 : bool lexical_cast(const std::string &amp;input, T &amp;output) {</span></a>
+<a name="1200"><span class="lineNum">    1200 </span>                :<span class="lineCov">        907 :     output = input;</span></a>
+<a name="1201"><span class="lineNum">    1201 </span>                :<span class="lineCov">        907 :     return true;</span></a>
 <a name="1202"><span class="lineNum">    1202 </span>                :            : }</a>
 <a name="1203"><span class="lineNum">    1203 </span>                :            : </a>
 <a name="1204"><span class="lineNum">    1204 </span>                :            : /// String and similar constructible and copy assignment</a>
@@ -1470,12 +1470,12 @@
 <a name="1384"><span class="lineNum">    1384 </span>                :            :                            classify_object&lt;AssignTo&gt;::value == object_category::wstring_assignable ||</a>
 <a name="1385"><span class="lineNum">    1385 </span>                :            :                            classify_object&lt;AssignTo&gt;::value == object_category::wstring_constructible),</a>
 <a name="1386"><span class="lineNum">    1386 </span>                :            :                       detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="1387"><span class="lineNum">    1387 </span>                :<span class="lineCov">        754 : bool lexical_assign(const std::string &amp;input, AssignTo &amp;output) {</span></a>
-<a name="1388"><span class="lineNum">    1388 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchCov" title="Branch 1 was taken 741 times"> + </span>]:<span class="lineCov">        754 :     if(input.empty()) {</span></a>
+<a name="1387"><span class="lineNum">    1387 </span>                :<span class="lineCov">        755 : bool lexical_assign(const std::string &amp;input, AssignTo &amp;output) {</span></a>
+<a name="1388"><span class="lineNum">    1388 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchCov" title="Branch 1 was taken 742 times"> + </span>]:<span class="lineCov">        755 :     if(input.empty()) {</span></a>
 <a name="1389"><span class="lineNum">    1389 </span>                :<span class="lineCov">         13 :         output = AssignTo{};</span></a>
 <a name="1390"><span class="lineNum">    1390 </span>                :<span class="lineCov">         13 :         return true;</span></a>
 <a name="1391"><span class="lineNum">    1391 </span>                :            :     }</a>
-<a name="1392"><span class="lineNum">    1392 </span>                :<span class="lineCov">        741 :     return lexical_cast(input, output);</span></a>
+<a name="1392"><span class="lineNum">    1392 </span>                :<span class="lineCov">        742 :     return lexical_cast(input, output);</span></a>
 <a name="1393"><span class="lineNum">    1393 </span>                :            : }</a>
 <a name="1394"><span class="lineNum">    1394 </span>                :            : </a>
 <a name="1395"><span class="lineNum">    1395 </span>                :            : /// Assign a value through lexical cast operations</a>
@@ -1583,8 +1583,8 @@
 <a name="1496"><span class="lineNum">    1496 </span>                :            :           enable_if_t&lt;classify_object&lt;ConvertTo&gt;::value &lt;= object_category::other &amp;&amp;</a>
 <a name="1497"><span class="lineNum">    1497 </span>                :            :                           classify_object&lt;AssignTo&gt;::value &lt;= object_category::wrapper_value,</a>
 <a name="1498"><span class="lineNum">    1498 </span>                :            :                       detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="1499"><span class="lineNum">    1499 </span>                :<span class="lineCov">        935 : bool lexical_conversion(const std::vector&lt;std ::string&gt; &amp;strings, AssignTo &amp;output) {</span></a>
-<a name="1500"><span class="lineNum">    1500 </span>                :<span class="lineCov">        935 :     return lexical_assign&lt;AssignTo, ConvertTo&gt;(strings[0], output);</span></a>
+<a name="1499"><span class="lineNum">    1499 </span>                :<span class="lineCov">        936 : bool lexical_conversion(const std::vector&lt;std ::string&gt; &amp;strings, AssignTo &amp;output) {</span></a>
+<a name="1500"><span class="lineNum">    1500 </span>                :<span class="lineCov">        936 :     return lexical_assign&lt;AssignTo, ConvertTo&gt;(strings[0], output);</span></a>
 <a name="1501"><span class="lineNum">    1501 </span>                :            : }</a>
 <a name="1502"><span class="lineNum">    1502 </span>                :            : </a>
 <a name="1503"><span class="lineNum">    1503 </span>                :            : /// Lexical conversion if there is only one element but the conversion type is for two, then call a two element</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">337</td>
@@ -120,7 +120,7 @@
 <a name="49"><span class="lineNum">      49 </span>                :            : /// Validate the input as a particular type</a>
 <a name="50"><span class="lineNum">      50 </span>                :            : template &lt;typename DesiredType&gt; class TypeValidator : public Validator {</a>
 <a name="51"><span class="lineNum">      51 </span>                :            :   public:</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         29 :     explicit TypeValidator(const std::string &amp;validator_name)</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         31 :     explicit TypeValidator(const std::string &amp;validator_name)</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         26 :         : Validator(validator_name, [](std::string &amp;input_string) {</span></a>
 <a name="54"><span class="lineNum">      54 </span>                :            :               using CLI::detail::lexical_cast;</a>
 <a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         26 :               auto val = DesiredType();</span></a>
@@ -132,7 +132,7 @@
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 14 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span>]
 <a name="58"><span class="lineNum">      58 </span>                :            :               }</a>
 <a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         17 :               return std::string{};</span></a>
-<a name="60"><span class="lineNum">      60 </span>  [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         29 :           }) {}</span></a>
+<a name="60"><span class="lineNum">      60 </span>  [<span class="branchCov" title="Branch 0 was taken 31 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 31 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         31 :           }) {}</span></a>
 <a name="61"><span class="lineNum">      61 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :     TypeValidator() : TypeValidator(detail::type_name&lt;DesiredType&gt;()) {}</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            : };</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>

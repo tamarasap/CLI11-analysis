@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">346</td>
@@ -420,7 +420,7 @@
 <a name="349"><span class="lineNum">     349 </span>                :            :     App &amp;operator=(const App &amp;) = delete;</a>
 <a name="350"><span class="lineNum">     350 </span>                :            : </a>
 <a name="351"><span class="lineNum">     351 </span>                :            :     /// virtual destructor</a>
-<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">       2057 :     virtual ~App() = default;</span></a>
+<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">       2061 :     virtual ~App() = default;</span></a>
 <a name="353"><span class="lineNum">     353 </span>                :            : </a>
 <a name="354"><span class="lineNum">     354 </span>                :            :     /// Convert the contents of argv to UTF-8. Only does something on Windows, does nothing elsewhere.</a>
 <a name="355"><span class="lineNum">     355 </span>                :            :     CLI11_NODISCARD char **ensure_utf8(char **argv);</a>
@@ -630,32 +630,32 @@
 <a name="559"><span class="lineNum">     559 </span>                :            :     template &lt;typename AssignTo,</a>
 <a name="560"><span class="lineNum">     560 </span>                :            :               typename ConvertTo = AssignTo,</a>
 <a name="561"><span class="lineNum">     561 </span>                :            :               enable_if_t&lt;!std::is_const&lt;ConvertTo&gt;::value, detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="562"><span class="lineNum">     562 </span>                :<span class="lineCov">       1086 :     Option *add_option(std::string option_name,</span></a>
+<a name="562"><span class="lineNum">     562 </span>                :<span class="lineCov">       1089 :     Option *add_option(std::string option_name,</span></a>
 <a name="563"><span class="lineNum">     563 </span>                :            :                        AssignTo &amp;variable,  ///&lt; The variable to set</a>
 <a name="564"><span class="lineNum">     564 </span>                :            :                        std::string option_description = &quot;&quot;) {</a>
 <a name="565"><span class="lineNum">     565 </span>                :            : </a>
-<a name="566"><span class="lineNum">     566 </span>                :<span class="lineCov">       2273 :         auto fun = [&amp;variable](const CLI::results_t &amp;res) {  // comment for spacing</span></a>
-<a name="567"><span class="lineNum">     567 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1187 :             return detail::lexical_conversion&lt;AssignTo, ConvertTo&gt;(res, variable);</span></a>
+<a name="566"><span class="lineNum">     566 </span>                :<span class="lineCov">       2277 :         auto fun = [&amp;variable](const CLI::results_t &amp;res) {  // comment for spacing</span></a>
+<a name="567"><span class="lineNum">     567 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1188 :             return detail::lexical_conversion&lt;AssignTo, ConvertTo&gt;(res, variable);</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 2 times"> + </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 3 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 19 was not taken"> - </span>]
 <a name="568"><span class="lineNum">     568 </span>                :            :         };</a>
 <a name="569"><span class="lineNum">     569 </span>                :            : </a>
-<a name="570"><span class="lineNum">     570 </span>  [<span class="branchCov" title="Branch 0 was taken 1086 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1086 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1140 :         Option *opt = add_option(option_name, fun, option_description, false, [&amp;variable]() {</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 1086 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 1086 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 1084 times"> + </span> 
+<a name="570"><span class="lineNum">     570 </span>  [<span class="branchCov" title="Branch 0 was taken 1089 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1089 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1143 :         Option *opt = add_option(option_name, fun, option_description, false, [&amp;variable]() {</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 1089 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 1089 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 1087 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 2 times"> + </span>]
 <a name="571"><span class="lineNum">     571 </span>                :<span class="lineCov">         46 :             return CLI::detail::checked_to_string&lt;AssignTo, ConvertTo&gt;(variable);</span></a>
 <a name="572"><span class="lineNum">     572 </span>                :            :         });</a>
-<a name="573"><span class="lineNum">     573 </span>  [<span class="branchCov" title="Branch 0 was taken 1084 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1084 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1084 :         opt-&gt;type_name(detail::type_name&lt;ConvertTo&gt;());</span></a>
+<a name="573"><span class="lineNum">     573 </span>  [<span class="branchCov" title="Branch 0 was taken 1087 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1087 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1087 :         opt-&gt;type_name(detail::type_name&lt;ConvertTo&gt;());</span></a>
 <a name="574"><span class="lineNum">     574 </span>                :            :         // these must be actual lvalues since (std::max) sometimes is defined in terms of references and references</a>
 <a name="575"><span class="lineNum">     575 </span>                :            :         // to structs used in the evaluation can be temporary so that would cause issues.</a>
-<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">       1084 :         auto Tcount = detail::type_count&lt;AssignTo&gt;::value;</span></a>
-<a name="577"><span class="lineNum">     577 </span>                :<span class="lineCov">       1084 :         auto XCcount = detail::type_count&lt;ConvertTo&gt;::value;</span></a>
-<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">       1084 :         opt-&gt;type_size(detail::type_count_min&lt;ConvertTo&gt;::value, (std::max)(Tcount, XCcount));</span></a>
-<a name="579"><span class="lineNum">     579 </span>                :<span class="lineCov">       1084 :         opt-&gt;expected(detail::expected_count&lt;ConvertTo&gt;::value);</span></a>
-<a name="580"><span class="lineNum">     580 </span>                :<span class="lineCov">       1084 :         opt-&gt;run_callback_for_default();</span></a>
-<a name="581"><span class="lineNum">     581 </span>                :<span class="lineCov">       1084 :         return opt;</span></a>
+<a name="576"><span class="lineNum">     576 </span>                :<span class="lineCov">       1087 :         auto Tcount = detail::type_count&lt;AssignTo&gt;::value;</span></a>
+<a name="577"><span class="lineNum">     577 </span>                :<span class="lineCov">       1087 :         auto XCcount = detail::type_count&lt;ConvertTo&gt;::value;</span></a>
+<a name="578"><span class="lineNum">     578 </span>                :<span class="lineCov">       1087 :         opt-&gt;type_size(detail::type_count_min&lt;ConvertTo&gt;::value, (std::max)(Tcount, XCcount));</span></a>
+<a name="579"><span class="lineNum">     579 </span>                :<span class="lineCov">       1087 :         opt-&gt;expected(detail::expected_count&lt;ConvertTo&gt;::value);</span></a>
+<a name="580"><span class="lineNum">     580 </span>                :<span class="lineCov">       1087 :         opt-&gt;run_callback_for_default();</span></a>
+<a name="581"><span class="lineNum">     581 </span>                :<span class="lineCov">       1087 :         return opt;</span></a>
 <a name="582"><span class="lineNum">     582 </span>                :            :     }</a>
 <a name="583"><span class="lineNum">     583 </span>                :            : </a>
 <a name="584"><span class="lineNum">     584 </span>                :            :     /// Add option for assigning to a variable</a>
@@ -744,8 +744,8 @@
 <a name="664"><span class="lineNum">     664 </span>                :            :                            std::is_rvalue_reference&lt;T &amp;&amp;&gt;::value) &amp;&amp;</a>
 <a name="665"><span class="lineNum">     665 </span>                :            :                               std::is_constructible&lt;std::string, typename std::remove_reference&lt;T&gt;::type&gt;::value,</a>
 <a name="666"><span class="lineNum">     666 </span>                :            :                           detail::enabler&gt; = detail::dummy&gt;</a>
-<a name="667"><span class="lineNum">     667 </span>                :<span class="lineCov">       1632 :     Option *add_flag(std::string flag_name, T &amp;&amp;flag_description) {</span></a>
-<a name="668"><span class="lineNum">     668 </span>  [<span class="branchCov" title="Branch 0 was taken 1632 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1632 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1632 :         return _add_flag_internal(flag_name, CLI::callback_t(), std::forward&lt;T&gt;(flag_description));</span></a>
+<a name="667"><span class="lineNum">     667 </span>                :<span class="lineCov">       1636 :     Option *add_flag(std::string flag_name, T &amp;&amp;flag_description) {</span></a>
+<a name="668"><span class="lineNum">     668 </span>  [<span class="branchCov" title="Branch 0 was taken 1636 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1636 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1636 :         return _add_flag_internal(flag_name, CLI::callback_t(), std::forward&lt;T&gt;(flag_description));</span></a>
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="669"><span class="lineNum">     669 </span>                :            :     }</a>
 <a name="670"><span class="lineNum">     670 </span>                :            : </a>
@@ -953,7 +953,7 @@
 <a name="871"><span class="lineNum">     871 </span>                :            :     /// This allows subclasses to inject code before callbacks but after parse.</a>
 <a name="872"><span class="lineNum">     872 </span>                :            :     ///</a>
 <a name="873"><span class="lineNum">     873 </span>                :            :     /// This does not run if any errors or help is thrown.</a>
-<a name="874"><span class="lineNum">     874 </span>                :<span class="lineCov">       1728 :     virtual void pre_callback() {}</span></a>
+<a name="874"><span class="lineNum">     874 </span>                :<span class="lineCov">       1730 :     virtual void pre_callback() {}</span></a>
 <a name="875"><span class="lineNum">     875 </span>                :            : </a>
 <a name="876"><span class="lineNum">     876 </span>                :            :     ///@}</a>
 <a name="877"><span class="lineNum">     877 </span>                :            :     /// @name Parsing</a>
@@ -1011,7 +1011,7 @@
 <a name="929"><span class="lineNum">     929 </span>                :            : </a>
 <a name="930"><span class="lineNum">     930 </span>                :            :     /// Get a subcommand pointer list to the currently selected subcommands (after parsing by default, in command</a>
 <a name="931"><span class="lineNum">     931 </span>                :            :     /// line order; use parsed = false to get the original definition list.)</a>
-<a name="932"><span class="lineNum">     932 </span>                :<span class="lineCov">       1964 :     CLI11_NODISCARD std::vector&lt;App *&gt; get_subcommands() const { return parsed_subcommands_; }</span></a>
+<a name="932"><span class="lineNum">     932 </span>                :<span class="lineCov">       1966 :     CLI11_NODISCARD std::vector&lt;App *&gt; get_subcommands() const { return parsed_subcommands_; }</span></a>
 <a name="933"><span class="lineNum">     933 </span>                :            : </a>
 <a name="934"><span class="lineNum">     934 </span>                :            :     /// Get a filtered subcommand pointer list from the original definition list. An empty function will provide all</a>
 <a name="935"><span class="lineNum">     935 </span>                :            :     /// subcommands (const)</a>
@@ -1234,10 +1234,10 @@
 <a name="1152"><span class="lineNum">    1152 </span>                :<span class="lineCov">          5 :     Option *get_help_ptr() { return help_ptr_; }</span></a>
 <a name="1153"><span class="lineNum">    1153 </span>                :            : </a>
 <a name="1154"><span class="lineNum">    1154 </span>                :            :     /// Get a pointer to the help flag. (const)</a>
-<a name="1155"><span class="lineNum">    1155 </span>                :<span class="lineCov">       7413 :     CLI11_NODISCARD const Option *get_help_ptr() const { return help_ptr_; }</span></a>
+<a name="1155"><span class="lineNum">    1155 </span>                :<span class="lineCov">       7421 :     CLI11_NODISCARD const Option *get_help_ptr() const { return help_ptr_; }</span></a>
 <a name="1156"><span class="lineNum">    1156 </span>                :            : </a>
 <a name="1157"><span class="lineNum">    1157 </span>                :            :     /// Get a pointer to the help all flag. (const)</a>
-<a name="1158"><span class="lineNum">    1158 </span>                :<span class="lineCov">       7400 :     CLI11_NODISCARD const Option *get_help_all_ptr() const { return help_all_ptr_; }</span></a>
+<a name="1158"><span class="lineNum">    1158 </span>                :<span class="lineCov">       7408 :     CLI11_NODISCARD const Option *get_help_all_ptr() const { return help_all_ptr_; }</span></a>
 <a name="1159"><span class="lineNum">    1159 </span>                :            : </a>
 <a name="1160"><span class="lineNum">    1160 </span>                :            :     /// Get a pointer to the config option.</a>
 <a name="1161"><span class="lineNum">    1161 </span>                :<span class="lineCov">          4 :     Option *get_config_ptr() { return config_ptr_; }</span></a>

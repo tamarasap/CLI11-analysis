@@ -31,27 +31,27 @@
             <td class="headerValue">coverage.filtered.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">120</td>
             <td class="headerCovTableEntry">122</td>
-            <td class="headerCovTableEntryHi">98.4 %</td>
+            <td class="headerCovTableEntry">122</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">71</td>
             <td class="headerCovTableEntry">72</td>
-            <td class="headerCovTableEntryHi">98.6 %</td>
+            <td class="headerCovTableEntry">72</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td></td>
             <td></td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">184</td>
+            <td class="headerCovTableEntry">185</td>
             <td class="headerCovTableEntry">346</td>
-            <td class="headerCovTableEntryLo">53.2 %</td>
+            <td class="headerCovTableEntryLo">53.5 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -150,18 +150,18 @@
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
 <a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">         55 :     CLI11_NODISCARD std::string get_name() const { return error_name; }</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">        549 :     Error(std::string name, std::string msg, int exit_code = static_cast&lt;int&gt;(ExitCodes::BaseClass))</span></a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">        549 :         : runtime_error(msg), actual_exit_code(exit_code), error_name(std::move(name)) {}</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">        553 :     Error(std::string name, std::string msg, int exit_code = static_cast&lt;int&gt;(ExitCodes::BaseClass))</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">        553 :         : runtime_error(msg), actual_exit_code(exit_code), error_name(std::move(name)) {}</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :            : </a>
-<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">        534 :     Error(std::string name, std::string msg, ExitCodes exit_code)</span></a>
-<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 534 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        534 :         : Error(std::move(name), std::move(msg), static_cast&lt;int&gt;(exit_code)) {}</span></a>
+<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">        538 :     Error(std::string name, std::string msg, ExitCodes exit_code)</span></a>
+<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 538 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        538 :         : Error(std::move(name), std::move(msg), static_cast&lt;int&gt;(exit_code)) {}</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            : };</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : </a>
 <a name="89"><span class="lineNum">      89 </span>                :            : // Note: Using Error::Error constructors does not work on GCC 4.7</a>
 <a name="90"><span class="lineNum">      90 </span>                :            : </a>
 <a name="91"><span class="lineNum">      91 </span>                :            : /// Construction errors (not in parsing)</a>
 <a name="92"><span class="lineNum">      92 </span>                :            : class ConstructionError : public Error {</a>
-<a name="93"><span class="lineNum">      93 </span>        [<span class="branchCov" title="Branch 0 was taken 89 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         89 :     CLI11_ERROR_DEF(Error, ConstructionError)</span></a>
+<a name="93"><span class="lineNum">      93 </span>        [<span class="branchCov" title="Branch 0 was taken 90 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         90 :     CLI11_ERROR_DEF(Error, ConstructionError)</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            : };</a>
 <a name="95"><span class="lineNum">      95 </span>                :            : </a>
 <a name="96"><span class="lineNum">      96 </span>                :            : /// Thrown when an option is set to conflicting values (non-vector and multi args, for example)</a>
@@ -194,15 +194,15 @@
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
 <a name="124"><span class="lineNum">     124 </span>                :            : /// Thrown on construction of a bad name</a>
 <a name="125"><span class="lineNum">     125 </span>                :            : class BadNameString : public ConstructionError {</a>
-<a name="126"><span class="lineNum">     126 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :     CLI11_ERROR_DEF(ConstructionError, BadNameString)</span></a>
-<a name="127"><span class="lineNum">     127 </span>  [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         11 :     CLI11_ERROR_SIMPLE(BadNameString)</span></a>
+<a name="126"><span class="lineNum">     126 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :     CLI11_ERROR_DEF(ConstructionError, BadNameString)</span></a>
+<a name="127"><span class="lineNum">     127 </span>  [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         12 :     CLI11_ERROR_SIMPLE(BadNameString)</span></a>
 <a name="128"><span class="lineNum">     128 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     static BadNameString OneCharName(std::string name) { return BadNameString(&quot;Invalid one char name: &quot; + name); }</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">          3 :     static BadNameString MissingDash(std::string name) {</span></a>
 <a name="130"><span class="lineNum">     130 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :         return BadNameString(&quot;Long names strings require 2 dashes &quot; + name);</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            :     }</a>
 <a name="132"><span class="lineNum">     132 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     static BadNameString BadLongName(std::string name) { return BadNameString(&quot;Bad long name: &quot; + name); }</span></a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineNoCov">          0 :     static BadNameString BadPositionalName(std::string name) {</span></a>
-<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         return BadNameString(&quot;Invalid positional Name: &quot; + name);</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">          1 :     static BadNameString BadPositionalName(std::string name) {</span></a>
+<a name="134"><span class="lineNum">     134 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :         return BadNameString(&quot;Invalid positional Name: &quot; + name);</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            :     }</a>
 <a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          2 :     static BadNameString ReservedName(std::string name) {</span></a>
 <a name="137"><span class="lineNum">     137 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :         return BadNameString(&quot;Names '-','--','++' are reserved and not allowed as option names &quot; + name);</span></a>
@@ -229,7 +229,7 @@
 <a name="158"><span class="lineNum">     158 </span>                :            : </a>
 <a name="159"><span class="lineNum">     159 </span>                :            : /// Anything that can error in Parse</a>
 <a name="160"><span class="lineNum">     160 </span>                :            : class ParseError : public Error {</a>
-<a name="161"><span class="lineNum">     161 </span>  [<span class="branchCov" title="Branch 0 was taken 426 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        426 :     CLI11_ERROR_DEF(Error, ParseError)</span></a>
+<a name="161"><span class="lineNum">     161 </span>  [<span class="branchCov" title="Branch 0 was taken 429 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        429 :     CLI11_ERROR_DEF(Error, ParseError)</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            : };</a>
 <a name="163"><span class="lineNum">     163 </span>                :            : </a>
 <a name="164"><span class="lineNum">     164 </span>                :            : // Not really &quot;errors&quot;</a>

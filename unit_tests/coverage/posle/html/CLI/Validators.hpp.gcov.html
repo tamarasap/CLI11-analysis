@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">27</td>
@@ -143,9 +143,9 @@
 <a name="72"><span class="lineNum">      72 </span>                :            :     Validator(std::string validator_desc, std::function&lt;std::string(std::string &amp;)&gt; func);</a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            :   public:</a>
-<a name="75"><span class="lineNum">      75 </span>        [<span class="branchCov" title="Branch 0 was taken 163 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        163 :     Validator() = default;</span></a>
+<a name="75"><span class="lineNum">      75 </span>        [<span class="branchCov" title="Branch 0 was taken 165 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        165 :     Validator() = default;</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            :     /// Construct a Validator with just the description string</a>
-<a name="77"><span class="lineNum">      77 </span>  [<span class="branchCov" title="Branch 0 was taken 215 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 215 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        237 :     explicit Validator(std::string validator_desc) : desc_function_([validator_desc]() { return validator_desc; }) {}</span></a>
+<a name="77"><span class="lineNum">      77 </span>  [<span class="branchCov" title="Branch 0 was taken 229 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 229 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        251 :     explicit Validator(std::string validator_desc) : desc_function_([validator_desc]() { return validator_desc; }) {}</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            :     /// Construct Validator from basic information</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :     Validator(std::function&lt;std::string(std::string &amp;)&gt; op,</a>
 <a name="80"><span class="lineNum">      80 </span>                :            :               std::string validator_desc,</a>
@@ -302,8 +302,8 @@
 <a name="231"><span class="lineNum">     231 </span>                :            :     /// Note that the constructor is templated, but the struct is not, so C++17 is not</a>
 <a name="232"><span class="lineNum">     232 </span>                :            :     /// needed to provide nice syntax for Range(a,b).</a>
 <a name="233"><span class="lineNum">     233 </span>                :            :     template &lt;typename T&gt;</a>
-<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 65 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         65 :     Range(T min_val, T max_val, const std::string &amp;validator_name = std::string{}) : Validator(validator_name) {</span></a>
-<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">         65 :         if(validator_name.empty()) {</span></a>
+<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 69 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         69 :     Range(T min_val, T max_val, const std::string &amp;validator_name = std::string{}) : Validator(validator_name) {</span></a>
+<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 60 times"> + </span>]:<span class="lineCov">         69 :         if(validator_name.empty()) {</span></a>
 <a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :             std::stringstream out;</span></a>
 <a name="237"><span class="lineNum">     237 </span>  [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          9 :             out &lt;&lt; detail::type_name&lt;T&gt;() &lt;&lt; &quot; in [&quot; &lt;&lt; min_val &lt;&lt; &quot; - &quot; &lt;&lt; max_val &lt;&lt; &quot;]&quot;;</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 9 times"> + </span> 
@@ -311,7 +311,7 @@
 <a name="238"><span class="lineNum">     238 </span>  [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          9 :             description(out.str());</span></a>
 <a name="239"><span class="lineNum">     239 </span>                :            :         }</a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
-<a name="241"><span class="lineNum">     241 </span>        [<span class="branchCov" title="Branch 0 was taken 65 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        306 :         func_ = [min_val, max_val](std::string &amp;input) {</span></a>
+<a name="241"><span class="lineNum">     241 </span>        [<span class="branchCov" title="Branch 0 was taken 69 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        310 :         func_ = [min_val, max_val](std::string &amp;input) {</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :             using CLI::detail::lexical_cast;</a>
 <a name="243"><span class="lineNum">     243 </span>                :            :             T val;</a>
 <a name="244"><span class="lineNum">     244 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        113 :             bool converted = lexical_cast(input, val);</span></a>
@@ -330,12 +330,12 @@
 <a name="250"><span class="lineNum">     250 </span>                :            :             }</a>
 <a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         56 :             return std::string{};</span></a>
 <a name="252"><span class="lineNum">     252 </span>                :            :         };</a>
-<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">         65 :     }</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">         69 :     }</span></a>
 <a name="254"><span class="lineNum">     254 </span>                :            : </a>
 <a name="255"><span class="lineNum">     255 </span>                :            :     /// Range of one value is 0 to value</a>
 <a name="256"><span class="lineNum">     256 </span>                :            :     template &lt;typename T&gt;</a>
-<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">         29 :     explicit Range(T max_val, const std::string &amp;validator_name = std::string{})</span></a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         29 :         : Range(static_cast&lt;T&gt;(0), max_val, validator_name) {}</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">         31 :     explicit Range(T max_val, const std::string &amp;validator_name = std::string{})</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">         31 :         : Range(static_cast&lt;T&gt;(0), max_val, validator_name) {}</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : };</a>
 <a name="260"><span class="lineNum">     260 </span>                :            : </a>
 <a name="261"><span class="lineNum">     261 </span>                :            : /// Check for a non negative number</a>
@@ -364,11 +364,11 @@
 <a name="284"><span class="lineNum">     284 </span>                :            : }</a>
 <a name="285"><span class="lineNum">     285 </span>                :            : </a>
 <a name="286"><span class="lineNum">     286 </span>                :            : /// Performs a *= b; if it doesn't cause integer overflow. Returns false otherwise.</a>
-<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">       8599 : template &lt;typename T&gt; typename std::enable_if&lt;std::is_integral&lt;T&gt;::value, bool&gt;::type checked_multiply(T &amp;a, T b) {</span></a>
-<a name="288"><span class="lineNum">     288 </span>  [<span class="branchCov" title="Branch 0 was taken 8591 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 5078 times"> + </span><span class="branchCov" title="Branch 3 was taken 3513 times"> + </span> :<span class="lineCov">       8599 :     if(a == 0 || b == 0 || a == 1 || b == 1) {</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 587 times"> + </span><span class="branchCov" title="Branch 5 was taken 4491 times"> + </span><span class="branchCov" title="Branch 6 was taken 153 times"> + </span><span class="branchCov" title="Branch 7 was taken 434 times"> + </span>]
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">       8165 :         a *= b;</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">       8165 :         return true;</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">       8605 : template &lt;typename T&gt; typename std::enable_if&lt;std::is_integral&lt;T&gt;::value, bool&gt;::type checked_multiply(T &amp;a, T b) {</span></a>
+<a name="288"><span class="lineNum">     288 </span>  [<span class="branchCov" title="Branch 0 was taken 8597 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 5082 times"> + </span><span class="branchCov" title="Branch 3 was taken 3515 times"> + </span> :<span class="lineCov">       8605 :     if(a == 0 || b == 0 || a == 1 || b == 1) {</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 587 times"> + </span><span class="branchCov" title="Branch 5 was taken 4495 times"> + </span><span class="branchCov" title="Branch 6 was taken 153 times"> + </span><span class="branchCov" title="Branch 7 was taken 434 times"> + </span>]
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">       8171 :         a *= b;</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">       8171 :         return true;</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            :     }</a>
 <a name="292"><span class="lineNum">     292 </span>  [<span class="branchCov" title="Branch 0 was taken 432 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 431 times"> + </span> :<span class="lineCov">        434 :     if(a == (std::numeric_limits&lt;T&gt;::min)() || b == (std::numeric_limits&lt;T&gt;::min)()) {</span></a>
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchCov" title="Branch 5 was taken 431 times"> + </span>]

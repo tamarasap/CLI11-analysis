@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">34</td>
@@ -49,9 +49,9 @@
             <td></td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">70</td>
+            <td class="headerCovTableEntry">71</td>
             <td class="headerCovTableEntry">98</td>
-            <td class="headerCovTableEntryLo">71.4 %</td>
+            <td class="headerCovTableEntryLo">72.4 %</td>
           </tr>
           <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -187,15 +187,15 @@
 <a name="114"><span class="lineNum">     114 </span>                :            : CLI11_INLINE std::string &amp;rtrim(std::string &amp;str, const std::string &amp;filter);</a>
 <a name="115"><span class="lineNum">     115 </span>                :            : </a>
 <a name="116"><span class="lineNum">     116 </span>                :            : /// Trim whitespace from string</a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">      12671 : inline std::string &amp;trim(std::string &amp;str) { return ltrim(rtrim(str)); }</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">      12723 : inline std::string &amp;trim(std::string &amp;str) { return ltrim(rtrim(str)); }</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            : </a>
 <a name="119"><span class="lineNum">     119 </span>                :            : /// Trim anything from string</a>
 <a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">          6 : inline std::string &amp;trim(std::string &amp;str, const std::string &amp;filter) { return ltrim(rtrim(str, filter), filter); }</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :            : </a>
 <a name="122"><span class="lineNum">     122 </span>                :            : /// Make a copy of the string and then trim it</a>
-<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">      11526 : inline std::string trim_copy(const std::string &amp;str) {</span></a>
-<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 11526 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      23052 :     std::string s = str;</span></a>
-<a name="125"><span class="lineNum">     125 </span>  [<span class="branchCov" title="Branch 0 was taken 11526 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 11526 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">      23052 :     return trim(s);</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">      11559 : inline std::string trim_copy(const std::string &amp;str) {</span></a>
+<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 11559 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      23118 :     std::string s = str;</span></a>
+<a name="125"><span class="lineNum">     125 </span>  [<span class="branchCov" title="Branch 0 was taken 11559 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 11559 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">      23118 :     return trim(s);</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            : }</a>
 <a name="127"><span class="lineNum">     127 </span>                :            : </a>
 <a name="128"><span class="lineNum">     128 </span>                :            : /// remove a matching pair of outer characters (front and back) from a string if both equal `key`</a>
@@ -224,17 +224,17 @@
 <a name="151"><span class="lineNum">     151 </span>                :            : </a>
 <a name="152"><span class="lineNum">     152 </span>                :            : /// Verify the first character of an option</a>
 <a name="153"><span class="lineNum">     153 </span>                :            : /// - is a trigger character, ! has special meaning and new lines would just be annoying to deal with</a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">      14761 : template &lt;typename T&gt; bool valid_first_char(T c) {</span></a>
-<a name="155"><span class="lineNum">     155 </span>  [<span class="branchCov" title="Branch 0 was taken 14753 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 14747 times"> + </span><span class="branchCov" title="Branch 3 was taken 6 times"> + </span>]:<span class="lineCov">      14761 :     return ((c != '-') &amp;&amp; (static_cast&lt;unsigned char&gt;(c) &gt; 33));  // space and '!' not allowed</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">      14784 : template &lt;typename T&gt; bool valid_first_char(T c) {</span></a>
+<a name="155"><span class="lineNum">     155 </span>  [<span class="branchCov" title="Branch 0 was taken 14776 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 14770 times"> + </span><span class="branchCov" title="Branch 3 was taken 6 times"> + </span>]:<span class="lineCov">      14784 :     return ((c != '-') &amp;&amp; (static_cast&lt;unsigned char&gt;(c) &gt; 33));  // space and '!' not allowed</span></a>
 <a name="156"><span class="lineNum">     156 </span>                :            : }</a>
 <a name="157"><span class="lineNum">     157 </span>                :            : </a>
 <a name="158"><span class="lineNum">     158 </span>                :            : /// Verify following characters of an option</a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">      22801 : template &lt;typename T&gt; bool valid_later_char(T c) {</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">      22864 : template &lt;typename T&gt; bool valid_later_char(T c) {</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            :     // = and : are value separators, { has special meaning for option defaults,</a>
 <a name="161"><span class="lineNum">     161 </span>                :            :     // and control codes other than tab would just be annoying to deal with in many places allowing space here has too</a>
 <a name="162"><span class="lineNum">     162 </span>                :            :     // much potential for inadvertent entry errors and bugs</a>
-<a name="163"><span class="lineNum">     163 </span>  [<span class="branchCov" title="Branch 0 was taken 22801 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 22801 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      22801 :     return ((c != '=') &amp;&amp; (c != ':') &amp;&amp; (c != '{') &amp;&amp; ((static_cast&lt;unsigned char&gt;(c) &gt; 32) || c == '\t'));</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 22800 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span><span class="branchCov" title="Branch 6 was taken 8 times"> + </span><span class="branchCov" title="Branch 7 was taken 22792 times"> + </span><span class="branchCov" title="Branch 8 was taken 4 times"> + </span> 
+<a name="163"><span class="lineNum">     163 </span>  [<span class="branchCov" title="Branch 0 was taken 22863 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 22863 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">      22864 :     return ((c != '=') &amp;&amp; (c != ':') &amp;&amp; (c != '{') &amp;&amp; ((static_cast&lt;unsigned char&gt;(c) &gt; 32) || c == '\t'));</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 22862 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span><span class="branchCov" title="Branch 6 was taken 8 times"> + </span><span class="branchCov" title="Branch 7 was taken 22854 times"> + </span><span class="branchCov" title="Branch 8 was taken 4 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 4 times"> + </span>]
 <a name="164"><span class="lineNum">     164 </span>                :            : }</a>
 <a name="165"><span class="lineNum">     165 </span>                :            : </a>
@@ -242,8 +242,8 @@
 <a name="167"><span class="lineNum">     167 </span>                :            : CLI11_INLINE bool valid_name_string(const std::string &amp;str);</a>
 <a name="168"><span class="lineNum">     168 </span>                :            : </a>
 <a name="169"><span class="lineNum">     169 </span>                :            : /// Verify an app name</a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">       3421 : inline bool valid_alias_name_string(const std::string &amp;str) {</span></a>
-<a name="171"><span class="lineNum">     171 </span>  [<span class="branchCov" title="Branch 0 was taken 3418 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 3416 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">       3421 :     return ((str.find_first_of('\n') == std::string::npos) &amp;&amp; (str.find_first_of('\0') == std::string::npos));</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">       3428 : inline bool valid_alias_name_string(const std::string &amp;str) {</span></a>
+<a name="171"><span class="lineNum">     171 </span>  [<span class="branchCov" title="Branch 0 was taken 3425 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 3423 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">       3428 :     return ((str.find_first_of('\n') == std::string::npos) &amp;&amp; (str.find_first_of('\0') == std::string::npos));</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            : }</a>
 <a name="173"><span class="lineNum">     173 </span>                :            : </a>
 <a name="174"><span class="lineNum">     174 </span>                :            : /// check if a string is a container segment separator (empty or &quot;%%&quot;)</a>
@@ -272,8 +272,8 @@
 <a name="196"><span class="lineNum">     196 </span>                :            : CLI11_INLINE std::string find_and_replace(std::string str, std::string from, std::string to);</a>
 <a name="197"><span class="lineNum">     197 </span>                :            : </a>
 <a name="198"><span class="lineNum">     198 </span>                :            : /// check if the flag definitions has possible false flags</a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">       1969 : inline bool has_default_flag_values(const std::string &amp;flags) {</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">       1969 :     return (flags.find_first_of(&quot;{!&quot;) != std::string::npos);</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">       1973 : inline bool has_default_flag_values(const std::string &amp;flags) {</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">       1973 :     return (flags.find_first_of(&quot;{!&quot;) != std::string::npos);</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :            : }</a>
 <a name="202"><span class="lineNum">     202 </span>                :            : </a>
 <a name="203"><span class="lineNum">     203 </span>                :            : CLI11_INLINE void remove_default_flag_values(std::string &amp;flags);</a>
@@ -286,12 +286,12 @@
 <a name="210"><span class="lineNum">     210 </span>                :            : </a>
 <a name="211"><span class="lineNum">     211 </span>                :            : /// Find a trigger string and call a modify callable function that takes the current string and starting position of the</a>
 <a name="212"><span class="lineNum">     212 </span>                :            : /// trigger and returns the position in the string to search for the next trigger string</a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         57 : template &lt;typename Callable&gt; inline std::string find_and_modify(std::string str, std::string trigger, Callable modify) {</span></a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">         57 :     std::size_t start_pos = 0;</span></a>
-<a name="215"><span class="lineNum">     215 </span>        [<span class="branchCov" title="Branch 0 was taken 54 times"> + </span><span class="branchCov" title="Branch 1 was taken 57 times"> + </span>]:<span class="lineCov">        111 :     while((start_pos = str.find(trigger, start_pos)) != std::string::npos) {</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         59 : template &lt;typename Callable&gt; inline std::string find_and_modify(std::string str, std::string trigger, Callable modify) {</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">         59 :     std::size_t start_pos = 0;</span></a>
+<a name="215"><span class="lineNum">     215 </span>        [<span class="branchCov" title="Branch 0 was taken 54 times"> + </span><span class="branchCov" title="Branch 1 was taken 59 times"> + </span>]:<span class="lineCov">        113 :     while((start_pos = str.find(trigger, start_pos)) != std::string::npos) {</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">         54 :         start_pos = modify(str, start_pos);</span></a>
 <a name="217"><span class="lineNum">     217 </span>                :            :     }</a>
-<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">         57 :     return str;</span></a>
+<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">         59 :     return str;</span></a>
 <a name="219"><span class="lineNum">     219 </span>                :            : }</a>
 <a name="220"><span class="lineNum">     220 </span>                :            : </a>
 <a name="221"><span class="lineNum">     221 </span>                :            : /// close a sequence of characters indicated by a closure character.  Brackets allows sub sequences</a>

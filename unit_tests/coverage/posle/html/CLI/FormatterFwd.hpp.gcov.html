@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2026-11-21 00:18:18</td>
+            <td class="headerValue">2026-11-22 19:29:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -151,14 +151,14 @@
 <a name="80"><span class="lineNum">      80 </span>                :            :     ///@{</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
 <a name="82"><span class="lineNum">      82 </span>                :            :   public:</a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">       1619 :     FormatterBase() = default;</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">       1623 :     FormatterBase() = default;</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :            :     FormatterBase(const FormatterBase &amp;) = default;</a>
 <a name="85"><span class="lineNum">      85 </span>                :            :     FormatterBase(FormatterBase &amp;&amp;) = default;</a>
 <a name="86"><span class="lineNum">      86 </span>                :            :     FormatterBase &amp;operator=(const FormatterBase &amp;) = default;</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     FormatterBase &amp;operator=(FormatterBase &amp;&amp;) = default;</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : </a>
 <a name="89"><span class="lineNum">      89 </span>                :            :     /// Adding a destructor in this form to work around bug in GCC 4.7</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">       1618 :     virtual ~FormatterBase() noexcept {}  // NOLINT(modernize-use-equals-default)</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">       1622 :     virtual ~FormatterBase() noexcept {}  // NOLINT(modernize-use-equals-default)</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            : </a>
 <a name="92"><span class="lineNum">      92 </span>                :            :     /// This is the key method that puts together help</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :     virtual std::string make_help(const App *, std::string, AppFormatMode) const = 0;</a>
@@ -259,7 +259,7 @@
 <a name="188"><span class="lineNum">     188 </span>                :            : /// overridable methods, to be highly customizable with minimal effort.</a>
 <a name="189"><span class="lineNum">     189 </span>                :            : class Formatter : public FormatterBase {</a>
 <a name="190"><span class="lineNum">     190 </span>                :            :   public:</a>
-<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">       1616 :     Formatter() = default;</span></a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">       1620 :     Formatter() = default;</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :            :     Formatter(const Formatter &amp;) = default;</a>
 <a name="193"><span class="lineNum">     193 </span>                :            :     Formatter(Formatter &amp;&amp;) = default;</a>
 <a name="194"><span class="lineNum">     194 </span>                :            :     Formatter &amp;operator=(const Formatter &amp;) = default;</a>
